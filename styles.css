@@ -275,8 +275,26 @@ section#trending {
     margin-top: 10px;
     font-size: 1.25em;
 }
+#playlists h2 {
+    margin: 35px 0px 20px 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
-
+section.playlist-cards {
+    padding: 10px;
+    background-color: #0f8dfb;
+    color: #fff;
+    text-align: center;
+    height: 230px;
+}
+section.playlist-cards h3 {
+    font-weight: bold;
+    padding: 5px 0px 10px;
+}
+section#playlists div {
+    background-color: #2799fb;
+}
 
 
 @media screen and (min-width:834px) {
