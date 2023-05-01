@@ -236,10 +236,11 @@ section#trending {
     color: #590242;
     margin-bottom: 20px;
 }
-#trending h2 {
+h2 {
     margin:35px 0px 20px 15px;
     font-weight: bold;
     text-transform: uppercase;
+    color: #590242;
 }
 
 .scroll {
@@ -264,7 +265,20 @@ section#trending {
 #trending ::-webkit-scrollbar-thumb:hover {
     background: #020659;
 }
-#trending button {
+#playlists ::-webkit-scrollbar, #curated ::-webkit-scrollbar {
+    width: 15px;
+}
+#playlists ::-webkit-scrollbar-track, #curated ::-webkit-scrollbar-track  {
+    box-shadow: inset 0 0 15px #020659;
+}
+#playlists ::-webkit-scrollbar-thumb, #curated ::-webkit-scrollbar-thumb {
+    background-color: #020659;
+    border-radius: 5px;
+}
+#playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
+    background: #590242;
+}
+button {
     display: block;
     background: #590242;
     padding: 8px 15px;
@@ -274,7 +288,12 @@ section#trending {
     margin-left: 20px;
     margin-top: 10px;
     font-size: 1.25em;
+    cursor: pointer;
 }
+button:hover {
+    background-color: #020659;
+}
+
 #playlists h2 {
     margin: 35px 0px 20px 15px;
     font-weight: bold;
@@ -287,6 +306,7 @@ section.playlist-cards {
     color: #fff;
     text-align: center;
     height: 230px;
+    cursor: pointer;
 }
 section.playlist-cards h3 {
     font-weight: bold;
@@ -295,7 +315,20 @@ section.playlist-cards h3 {
 section#playlists div {
     background-color: #2799fb;
 }
+#curated section.playlist-cards {
+    background-color: #010873;
+}
 
+#curated .scroll {
+    background-color: #02098d;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 25px 0px 15px;
+    color: #590242;
+    font-size: .8em;
+}
 
 @media screen and (min-width:834px) {
     ul {
@@ -324,8 +357,28 @@ section#playlists div {
         margin-left: auto;
         margin-right: auto;
     }
-    #trending button {
+    button {
         margin-left: auto;
         margin-right: 15px;
+    }
+    div#playlist-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    #playlists .scroll, #curated .scroll {
+        grid-template-columns: 1fr;
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 600px;
+    }
+
+    section.playlist-cards  {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 120px;
+    }
+
+    section.playlist-cards img {
+        grid-row: span 2;
     }
 }
